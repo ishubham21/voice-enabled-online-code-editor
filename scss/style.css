@@ -34,9 +34,10 @@ ul li {
   padding: 10px 20px;
   background-color: #fff;
   color: #444;
+  border: 1px solid #000;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
   cursor: pointer;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
 }
 
 ul li:hover {
@@ -51,10 +52,16 @@ ul li:hover {
   padding: 10px 20px;
   background-color: #fff;
   color: #444;
+  border: 1px solid #000;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
   cursor: pointer;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-  font-weight: 600;
+}
+
+#run:hover {
+  background-color: #444;
+  color: #fff;
+  border-color: #fff;
 }
 
 * {
