@@ -7,11 +7,40 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <meta name="description" content="">
+        <meta name="description" content="An online webpage visualiser editor developed by Shubham Gautam">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
+
+        <button>Run</button>
+        <ul>
+            <li data-target="#html-blk">HTML</li>
+            <li data-target="#css-blk">CSS</li>
+            <li data-target="#js-blk">Js</li>
+            <li data-target="#result-blk">Result</li>
+        </ul>
+        <!--HTML Block-->
+        <div class="codeContainer" id="html-blk">
+            <textarea name="html" id="html" placeholder="Enter HTML code"></textarea>
+        </div>
+
+        <!--CSS Block-->
+        <div class="codeContainer" id="css-blk">
+            <textarea name="css" id="css" placeholder="Enter CSS code"></textarea>
+        </div>
+        
+        <!--Javascript Block-->
+        <div class="codeContainer" id="js-blk">
+            <textarea name="js" id="js" placeholder="Enter Javascript code"></textarea>
+        </div>
+        
+        <!--Result Block-->
+        <div class="codeContainer" id="result-blk">
+            <textarea name="result" id="result" placeholder="This is your result space"></textarea>
+        </div>
+
+        <!--Script Tags-->
         <script src="./js/jquery.js"></script>
         <script src="./js/jquery-ui.js"></script>
         <script src="js/index.js"></script>
