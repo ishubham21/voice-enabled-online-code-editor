@@ -8,7 +8,16 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background: #444;
+  padding: 0 15px;
+}
+
+.control-blk h4 {
+  font-weight: 200;
+  color: #fff;
 }
 
 ul {
@@ -25,10 +34,9 @@ ul li {
   padding: 10px 20px;
   background-color: #fff;
   color: #444;
-  border: 1px solid #000;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 ul li:hover {
@@ -38,12 +46,23 @@ ul li:hover {
 }
 
 #run {
+  border-radius: 5px;
+  margin: 0 1px;
   padding: 10px 20px;
-  justify-self: flex-end;
+  background-color: #fff;
+  color: #444;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  font-weight: 600;
 }
 
 * {
   padding: 0;
   margin: 0;
+}
+
+html, body {
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */

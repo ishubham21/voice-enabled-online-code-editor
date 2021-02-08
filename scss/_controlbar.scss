@@ -1,8 +1,23 @@
+@mixin btn-desgin {
+    border-radius: 5px;
+    margin: 0 1px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
 .control-blk{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center;
+    justify-content: space-between;
     background: #444;
+    padding: 0 15px;
+    h4{
+        font-weight: 200;
+        color: #fff;
+
+    }
 }
 
 ul{
@@ -11,25 +26,17 @@ ul{
     margin: 10px;
     
     li{
-        border-radius: 5px;
-        margin: 0 1px;
-        padding: 10px 20px;
-        background-color: #fff;
-        color: #444;
-        border: 1px solid #000;
-        transition: 0.3s;
-        cursor: pointer;
+        @include btn-desgin();
 
         &:hover{
             background-color: #444;
             color: #fff;
             border-color: #fff;
         }
-
     }
 }
 
 #run{
-    padding: 10px 20px;
-    justify-self: flex-end;
+    @include btn-desgin();
+    font-weight: 600;
 }
