@@ -126,6 +126,40 @@ ul li:hover {
   font-size: 16px;
 }
 
+.code-area div iframe {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  border: 1px solid black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 5px;
+  -webkit-animation: fadeIn 0.2s 0s ease;
+          animation: fadeIn 0.2s 0s ease;
+  background-color: #fff;
+}
+
+.code-area div iframe:focus {
+  background-color: #fff;
+  border: 1.5px solid #232323;
+}
+
+.code-area div iframe::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+.code-area div iframe:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.code-area div iframe::-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.code-area div iframe::placeholder {
+  font-size: 16px;
+}
+
 .selected {
   display: block !important;
 }
