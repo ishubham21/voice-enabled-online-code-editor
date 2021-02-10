@@ -1,32 +1,20 @@
 //Immediately Invoked Function Expression
-
 (function () {
 
-    //selecting all the buttons
-    const ul = document.querySelector('ul')
+    //selecting the list wrapper i.e. <ul>
+    const btnList = document.querySelector('.toggle-btns')
 
-    ul.addEventListener('click', (e) => {
+    //click event listener
+    btnList.addEventListener('click', (e) => {
+
+        //using event.target 
         var blkId = e.target.getAttribute('data-target')
-        
+
         var blkToEnable = document.querySelector(blkId)
-
+       
+        //toggling the class selected
         blkToEnable.classList.toggle('selected')
+
     })
-    const btns = document.querySelectorAll('.control-btn')
-
-    //iterating over buttons
-    // for (let i = 0; i < btns.length; i++) {
-
-    //     btns[i].addEventListener('click', () => {
-            
-    //         var blkId = this.getAttribute('data-target')
-    //         var blkToEnable = document.querySelector(blkId)
-
-    //         //toggle
-    //         blkToEnable.classList.toggle('selected')
-        
-    //     })
-
-    // }
     
 })();
