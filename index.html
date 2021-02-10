@@ -10,34 +10,36 @@
     <body>
 
         <div class="control-blk">
-            <h4>Code Editor</h4>
+            <h4><a href="#">Code Editor</a></h4>
             <ul>
-                <li data-target="#html-blk">HTML</li>
-                <li data-target="#css-blk">CSS</li>
-                <li data-target="#js-blk">JavaScript</li>
-                <li data-target="#result-blk">Result</li>
+                <li data-target="#html-blk" class="control-btn">HTML</li>
+                <li data-target="#css-blk" class="control-btn">CSS</li>
+                <li data-target="#js-blk" class="control-btn">JavaScript</li>
+                <li data-target="#result-blk" class="control-btn">Result</li>
             </ul>
             
             <button id="run">Run</button>
         </div>
         <!--HTML Block-->
-        <div class="codeContainer" id="html-blk">
-            <textarea name="html" id="html" placeholder="Enter HTML code"></textarea>
-        </div>
-
-        <!--CSS Block-->
-        <div class="codeContainer" id="css-blk">
-            <textarea name="css" id="css" placeholder="Enter CSS code"></textarea>
-        </div>
-        
-        <!--Javascript Block-->
-        <div class="codeContainer" id="js-blk">
-            <textarea name="js" id="js" placeholder="Enter Javascript code"></textarea>
-        </div>
-        
-        <!--Result Block-->
-        <div class="codeContainer" id="result-blk">
-            <textarea name="result" id="result" placeholder="This is your result space"></textarea>
+        <div class="code-area">
+            <div class="codeContainer " id="html-blk">
+                <textarea name="html" id="html" placeholder="Enter HTML code"></textarea>
+            </div>
+            
+            <!--CSS Block-->
+            <div class="codeContainer" id="css-blk">
+                <textarea name="css" id="css" placeholder="Enter CSS code"></textarea>
+            </div>
+            
+            <!--Javascript Block-->
+            <div class="codeContainer" id="js-blk">
+                <textarea name="js" id="js" placeholder="Enter Javascript code"></textarea>
+            </div>
+            
+            <!--Result Block-->
+            <div class="codeContainer selected" id="result-blk">
+                <textarea name="result" id="result" placeholder="This is your result space"></textarea>
+            </div>
         </div>
 
         <!--Script Tags-->

@@ -20,6 +20,11 @@
   color: #fff;
 }
 
+.control-blk h4 a {
+  color: #fff;
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
   display: -webkit-box;
@@ -64,6 +69,77 @@ ul li:hover {
   border-color: #fff;
 }
 
+.code-area {
+  padding: 20px 10px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.code-area div {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 80vh;
+  display: none;
+}
+
+.code-area div textarea {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  border: 1px solid black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 5px;
+  -webkit-animation: fadeIn 0.2s 0s ease;
+          animation: fadeIn 0.2s 0s ease;
+}
+
+.code-area div textarea:focus {
+  background-color: #fff;
+  border: 1.5px solid #232323;
+}
+
+.code-area div textarea::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+.code-area div textarea:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.code-area div textarea::-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.code-area div textarea::placeholder {
+  font-size: 16px;
+}
+
+.selected {
+  display: block !important;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -71,5 +147,6 @@ ul li:hover {
 
 html, body {
   overflow: hidden;
+  background: #ddd;
 }
 /*# sourceMappingURL=style.css.map */
