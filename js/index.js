@@ -18,10 +18,3 @@
     })
     
 })();
-
-var run = document.querySelector('#run')
-run.addEventListener('click', (e) => {
-    e.preventDefault()
-})
-
-const blob = new Blob([])
