@@ -19,9 +19,9 @@
     
 })();
 
-const getBlobURL = (code, type) => {
-    const blob = new Blob([code], { type })
-    return URL.createObjectURL(blob)
-}
+var run = document.querySelector('#run')
+run.addEventListener('click', (e) => {
+    e.preventDefault()
+})
 
-console.log(getBlobURL('<p>My webpage</p>', 'text/html'))
+const blob = new Blob([])
