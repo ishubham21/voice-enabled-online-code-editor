@@ -29,29 +29,29 @@
 //     $('iframe').attr('srcdoc', str);
 // });
 
-// const getBlobURL = (code, type) => {
-//     const blob = new Blob([code], { type })
-//     return URL.createObjectURL(blob)
-// }
-// const getGeneratedPageURL = ({ html, css, js }) => {
+const getBlobURL = (code, type) => {
+    const blob = new Blob([code], { type })
+    return URL.createObjectURL(blob)
+}
+const getGeneratedUrl = ({ html, css, js }) => {
     
-//     const cssURL = getBlobURL(css, 'text/css')
-//     const jsURL = getBlobURL(js, 'text/javascript')
+    const cssURL = getBlobURL(css, 'text/css')
+    const jsURL = getBlobURL(js, 'text/javascript')
 
-//     const source = `
-//     <html>
-//       <head>
-//         ${css && `<link rel="stylesheet" type="text/css" href="${cssURL}" />`}
-//         ${js && `<script src="${jsURL}"></script>`}
-//       </head>
-//       <body>
-//         ${html || ''}
-//       </body>
-//     </html>
-//   `
+    const source = `
+    <html>
+      <head>
+        ${css && `<link rel="stylesheet" type="text/css" href="${cssURL}" />`}
+        ${js && `<script src="${jsURL}"></script>`}
+      </head>
+      <body>
+        ${html || ''}
+      </body>
+    </html>
+  `
 
-//     return getBlobURL(source, 'text/html')
-// }
+    return getBlobURL(source, 'text/html')
+}
 
 
 // const url = getGeneratedPageURL({
@@ -63,7 +63,7 @@
 // const iframe = document.querySelector('iframe')
 // iframe.src = url
 
-function getValues(){
+function getCodeValues(){
 
     //getting values of textboxes for compilation
     const html = document.querySelector('#html').value
@@ -72,18 +72,25 @@ function getValues(){
 
     if (!html) {
         alert('Cannot run empty html')
-        //return null
+        return null
     }
-    else{
-        const codes = { html, css, js }
-        return codes
-    }
+
+    //codes object containing codes from all the blocks
+    const codes = { html, css, js }
+    return codes
 }
 
 var run = document.querySelector('#run')
 run.addEventListener('click', () => {
-    const values = getValues()
 
-    console.log(values);
+    const codeValues = getCodeValues()
+    
+    if (codeValues != null) {
+        const urlForIframe = getGeneratedUrl(codeValues)
+        
+        const iframe = document.querySelector('#result')
+        iframe.src = urlForIframe
+    }
+
 })
 
