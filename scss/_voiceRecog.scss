@@ -1,0 +1,8 @@
+.voice-recog{
+    margin-top: 20px;
+    @include center();
+
+    button{
+        @include btn-ui();
+    }
+}
