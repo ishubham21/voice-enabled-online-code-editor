@@ -83,8 +83,14 @@ run.addEventListener('click', () => {
 })
 
 //a function to start voice recognition
-function enableVoiceRecog(e) {
+function enableVoiceRecog(e){
+    
+    //creating an instance for speech recognition
+    speechRecognition = new webkitSpeechRecognition();
+    speechRecognition.onresult = console.log
+    speechRecognition.start()
 }
+
 var voiceBtn = document.querySelector('#voiceRecogBtn')
 voiceBtn.addEventListener('click', enableVoiceRecog)
 
