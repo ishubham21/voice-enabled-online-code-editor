@@ -82,3 +82,9 @@ run.addEventListener('click', () => {
 
 })
 
+//a function to start voice recognition
+function enableVoiceRecog(e) {
+}
+var voiceBtn = document.querySelector('#voiceRecogBtn')
+voiceBtn.addEventListener('click', enableVoiceRecog)
+

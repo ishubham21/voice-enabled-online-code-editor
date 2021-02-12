@@ -4,5 +4,13 @@
 
     button{
         @include btn-ui();
+        background-color: #444;
+        color: #fff;
+        
+        &:hover{
+            background: #fff;
+            border: 1px solid #444;
+            color: #000;
+        }
     }
 }
