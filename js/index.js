@@ -82,15 +82,46 @@ run.addEventListener('click', () => {
 
 })
 
-//a function to start voice recognition
-function enableVoiceRecog(e){
-    
-    //creating an instance for speech recognition
-    speechRecognition = new webkitSpeechRecognition();
-    speechRecognition.onresult = console.log
-    speechRecognition.start()
-}
-
+var listening = false
 var voiceBtn = document.querySelector('#voiceRecogBtn')
-voiceBtn.addEventListener('click', enableVoiceRecog)
+// //a function to start voice recognition
+// const enableVoiceRecog = () => {
+//     listening = true
+//     voiceBtn.innerText = 'Stop Listening'
+//     return 1
+// }
+
+// const diableVoiceRecog = () => {
+//     listening = false
+//     voiceBtn.innerText  ='Start Listening'
+//     return 0
+// }
+voiceBtn.addEventListener('click', () => {
+    // if (listening == false) {
+    //     enableVoiceRecog()
+    // }
+    // else{
+    //     diableVoiceRecog()
+    // }
+
+    var grammar = 'coma = ,' 
+    var recognition = new webkitSpeechRecognition();
+    var speechRecognitionList = new webkitSpeechGrammarList();
+    speechRecognitionList.addFromString(grammar, 1);
+    recognition.grammars = speechRecognitionList;
+    recognition.continuous = false;
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    var diagnostic = document.querySelector('.output');
+    var bg = document.querySelector('html');
+    recognition.start();
+    console.log('Ready to receive a color command.');
+
+    recognition.onresult = function (event) {
+        var color = event.results[0][0].transcript;
+        console.log(color);
+    }
+})
 
