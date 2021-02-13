@@ -263,6 +263,8 @@ html, body {
 .popup h3:nth-of-type(2) {
   background-color: #ddd;
   margin: 15px 0;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .popup .popBtns {

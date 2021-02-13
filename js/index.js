@@ -83,11 +83,25 @@ run.addEventListener('click', () => {
 })
 
 const writeVoiceText = (voiceText) => {
+
+    var copyBtn = document.querySelector('#copyVoiceText')
+    copyBtn.innerText = 'Copy'
+
+    var closeBtn = document.querySelector('#closePopup')
+
     var popup = document.querySelector('.popup')
     popup.style.display = 'flex'
 
     var popupTextArea = document.querySelectorAll('.popup h3')[1]
     popupTextArea.innerText = voiceText
+
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none'
+    })
+    
+    copyBtn.addEventListener('click', () => {
+        copyBtn.innerText = 'Copied'
+    })
 }
 
 //flag value
