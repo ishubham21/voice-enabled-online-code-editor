@@ -16,5 +16,5 @@ This website doesn't support the addition of special characters using voice reco
 We need to wait until google adds support for punctuations and special characters including but not limited to angular brackets (<>), question mark (?), period (.), semicolon (;) and colon (:).
 
 ## Visit
-Visit here - [Link to the hosted project](https://ishubham21.github.io/online-code-editor/)
+Visit here - [Link to the hosted project](https://ishubham21.github.io/voice-enabled-online-code-editor/)
 
