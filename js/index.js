@@ -82,46 +82,55 @@ run.addEventListener('click', () => {
 
 })
 
+//flag value
 var listening = false
 var voiceBtn = document.querySelector('#voiceRecogBtn')
-// //a function to start voice recognition
-// const enableVoiceRecog = () => {
-//     listening = true
-//     voiceBtn.innerText = 'Stop Listening'
-//     return 1
-// }
 
-// const diableVoiceRecog = () => {
-//     listening = false
-//     voiceBtn.innerText  ='Start Listening'
-//     return 0
-// }
+//creating an instance for voice recognition
+var recognition = new webkitSpeechRecognition();
+
+//setting continous listening
+recognition.continuous = true;
+recognition.lang = 'en-US';
+
+//don't retrun interim and unsure results
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+//a function to start voice recognition
+const enableVoiceRecog = () => {
+    listening = true
+    voiceBtn.innerText = 'Stop Listening'
+
+    //starting voice recognition
+    recognition.start()
+    console.log('Ready to receive voice inputs.')
+
+    return 1
+}
+
+const diableVoiceRecog = () => {
+    listening = false
+    voiceBtn.innerText  ='Start Listening'
+
+    //stopping voice recognition
+    recognition.stop()
+    return 0
+}
+
+//click event listener
 voiceBtn.addEventListener('click', () => {
-    // if (listening == false) {
-    //     enableVoiceRecog()
-    // }
-    // else{
-    //     diableVoiceRecog()
-    // }
+    if (listening != true) {
+        enableVoiceRecog()
+    }
+    else{
+        diableVoiceRecog()
+    }
 
-    var grammar = 'coma = ,' 
-    var recognition = new webkitSpeechRecognition();
-    var speechRecognitionList = new webkitSpeechGrammarList();
-    speechRecognitionList.addFromString(grammar, 1);
-    recognition.grammars = speechRecognitionList;
-    recognition.continuous = false;
-    recognition.lang = 'en-US';
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-
-    var diagnostic = document.querySelector('.output');
-    var bg = document.querySelector('html');
-    recognition.start();
-    console.log('Ready to receive a color command.');
-
+    //onresult function from speech recog
     recognition.onresult = function (event) {
-        var color = event.results[0][0].transcript;
-        console.log(color);
+        var result = event.results[0][0].transcript
+        console.log(result)
     }
 })
 
