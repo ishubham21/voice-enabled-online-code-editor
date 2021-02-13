@@ -85,12 +85,8 @@ run.addEventListener('click', () => {
 //a function to copy to the clipboard
 function copyText(textToCopy) {
     //using window.navigator API to copy the results to the clipboard
-    try {
-        window.navigator.clipboard.writeText(textToCopy)
-        copyBtn.innerText = 'Copied'
-    } catch (error) {
-        alert('Error occured, copy it manually.')
-    }
+    window.navigator.clipboard.writeText(textToCopy)
+    copyBtn.innerText = 'Copied'
 }
 
 //function to handle popups and catch voice texts
