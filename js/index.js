@@ -134,3 +134,12 @@ voiceBtn.addEventListener('click', () => {
     }
 })
 
+
+//check if the browser is upgraded or not
+window.addEventListener('load', () => {
+    if (!('webkitSpeechRecognition' in window)) {
+        alert('Your browser is outdated. You may want to upgrade it.')
+        upgrade();
+    }
+})
+
