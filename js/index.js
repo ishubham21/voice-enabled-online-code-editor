@@ -82,6 +82,18 @@ run.addEventListener('click', () => {
 
 })
 
+//a function to copy to the clipboard
+function copyText(textToCopy) {
+    //using window.navigator API to copy the results to the clipboard
+    try {
+        window.navigator.clipboard.writeText(textToCopy)
+        copyBtn.innerText = 'Copied'
+    } catch (error) {
+        alert('Error occured, copy it manually.')
+    }
+}
+
+//function to handle popups and catch voice texts
 const writeVoiceText = (voiceText) => {
 
     var copyBtn = document.querySelector('#copyVoiceText')
@@ -89,19 +101,21 @@ const writeVoiceText = (voiceText) => {
 
     var closeBtn = document.querySelector('#closePopup')
 
+    //popup
     var popup = document.querySelector('.popup')
     popup.style.display = 'flex'
 
+    //result
     var popupTextArea = document.querySelectorAll('.popup h3')[1]
     popupTextArea.innerText = voiceText
 
+    //close popup
     closeBtn.addEventListener('click', () => {
         popup.style.display = 'none'
     })
     
-    copyBtn.addEventListener('click', () => {
-        copyBtn.innerText = 'Copied'
-    })
+    //copy button
+    copyBtn.addEventListener('click', copyText(voiceText))
 }
 
 //flag value
@@ -163,6 +177,8 @@ voiceBtn.addEventListener('click', () => {
 window.addEventListener('load', () => {
     if (!('webkitSpeechRecognition' in window)) {
         alert('Your browser is outdated. You may want to upgrade it.')
+
+        //native to chrome
         upgrade();
     }
 })
