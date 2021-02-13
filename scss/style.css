@@ -227,7 +227,7 @@ ul li:hover {
 }
 
 html, body {
-  overflow: hidden;
+  overflow-x: hidden;
   background: #ddd;
 }
 
