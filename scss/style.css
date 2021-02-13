@@ -230,4 +230,71 @@ html, body {
   overflow: hidden;
   background: #ddd;
 }
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  z-index: 100;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #232323;
+  max-width: 80%;
+  min-width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+}
+
+.popup h3:nth-of-type(2) {
+  background-color: #ddd;
+  margin: 15px 0;
+}
+
+.popup .popBtns {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popup button {
+  border-radius: 5px;
+  margin: 0 1px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #444;
+  border: 1px solid #000;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+  display: block;
+  margin: 0 10px;
+}
+
+.popup button:hover {
+  background-color: #444;
+  color: #fff;
+  border-color: #fff;
+}
 /*# sourceMappingURL=style.css.map */

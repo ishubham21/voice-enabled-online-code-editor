@@ -82,14 +82,12 @@ run.addEventListener('click', () => {
 
 })
 
-const writeVoiceText = () => {
+const writeVoiceText = (voiceText) => {
+    var popup = document.querySelector('.popup')
+    popup.style.display = 'flex'
 
-    var textareas = document.querySelectorAll('textarea')
-    for (let i = 0; i < textareas.length; i++) {
-        if (textareas[i].matches(":focus")) {
-            alert('h')
-        }      
-    }
+    var popupTextArea = document.querySelectorAll('.popup h3')[1]
+    popupTextArea.innerText = voiceText
 }
 
 //flag value
@@ -140,8 +138,9 @@ voiceBtn.addEventListener('click', () => {
 
     //onresult function from speech recog
     recognition.onresult = function (event) {
+        //results object
         var result = event.results[0][0].transcript
-        console.log(result)
+        writeVoiceText(result)
     }
 })
 
@@ -154,5 +153,4 @@ window.addEventListener('load', () => {
     }
 })
 
-writeVoiceText()
 

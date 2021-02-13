@@ -18,3 +18,33 @@ html, body{
     background: #ddd;
 }
 
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 100;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #232323;
+    max-width: 80%;
+    min-width: 80%;
+    @include center();
+    flex-direction: column;
+    display: none;
+
+    h3:nth-of-type(2){
+        background-color: #ddd;
+        margin: 15px 0;
+    }
+    .popBtns{
+        margin-top: 20px;
+        @include center();
+    }
+    button{
+        @include btn-ui();
+        display: block;
+        margin: 0 10px;
+    }
+}
