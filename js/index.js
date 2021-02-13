@@ -82,6 +82,16 @@ run.addEventListener('click', () => {
 
 })
 
+const writeVoiceText = () => {
+
+    var textareas = document.querySelectorAll('textarea')
+    for (let i = 0; i < textareas.length; i++) {
+        if (textareas[i].matches(":focus")) {
+            alert('h')
+        }      
+    }
+}
+
 //flag value
 var listening = false
 var voiceBtn = document.querySelector('#voiceRecogBtn')
@@ -106,7 +116,7 @@ const enableVoiceRecog = () => {
     recognition.start()
     console.log('Ready to receive voice inputs.')
 
-    return 1
+    return
 }
 
 const diableVoiceRecog = () => {
@@ -115,7 +125,8 @@ const diableVoiceRecog = () => {
 
     //stopping voice recognition
     recognition.stop()
-    return 0
+    
+    return 
 }
 
 //click event listener
@@ -142,4 +153,6 @@ window.addEventListener('load', () => {
         upgrade();
     }
 })
+
+writeVoiceText()
 
